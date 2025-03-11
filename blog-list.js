@@ -1,4 +1,4 @@
-// Sample blog data
+// Sample blog data with URLs
 const blogPosts = [
   {
     id: 1,
@@ -6,7 +6,8 @@ const blogPosts = [
     excerpt: "Exploring the beauty of less in modern design and lifestyle.",
     date: "March 11, 2025",
     topics: ["design", "minimalism"],
-    tags: ["ui-ux", "trends"]
+    tags: ["ui-ux", "trends"],
+    url: "post1.html"  // Add URL for redirection
   },
   {
     id: 2,
@@ -14,7 +15,8 @@ const blogPosts = [
     excerpt: "How technology is reshaping creative expression in the 21st century.",
     date: "March 10, 2025",
     topics: ["technology", "design"],
-    tags: ["web-design", "trends"]
+    tags: ["web-design", "trends"],
+    url: "post2.html"
   },
   {
     id: 3,
@@ -22,9 +24,32 @@ const blogPosts = [
     excerpt: "Predictions and trends shaping the next decade of digital interfaces.",
     date: "March 9, 2025",
     topics: ["design", "technology"],
-    tags: ["ui-ux", "web-design"]
+    tags: ["ui-ux", "web-design"],
+    url: "post3.html"
   }
 ];
+
+// DOM Element
+const blogGrid = document.getElementById('blog-grid');
+
+// Function to Render Blog Posts
+function renderBlogPosts(posts) {
+  blogGrid.innerHTML = posts.map(post => `
+    <div class="blog-post">
+      <h2><a href="${post.url}">${post.title}</a></h2>
+      <p>${post.excerpt}</p>
+      <span class="post-date">${post.date}</span>
+      <div class="post-tags">
+        ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// Initial Render
+document.addEventListener('DOMContentLoaded', () => {
+  renderBlogPosts(blogPosts);
+});
 
 // DOM Elements
 const searchInput = document.getElementById('blog-search');
