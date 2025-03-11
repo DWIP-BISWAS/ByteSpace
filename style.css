@@ -419,7 +419,71 @@ footer {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
 }
+/* Centering the search bar */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
 
+/* Search Container */
+.search-container {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+}
+
+/* Search Input Styling */
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 25px; /* Curved edges */
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding-left: 40px; /* Prevent overlap with icon */
+}
+
+/* Black glow effect when focused */
+.search-input:focus {
+  border-color: #000; /* Black border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Black glow effect */
+  transform: scale(1.05);
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M21.71 20.29l-5.4-5.4A7.93 7.93 0 0018 10a8 8 0 10-8 8 7.93 7.93 0 004.89-1.71l5.4 5.4a1 1 0 001.42-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"></path></svg>') no-repeat center;
+  background-size: contain;
+}
+
+/* Edge Lights - 2 Moving Borders */
+.edge-light {
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: black;
+  animation: moveEdges 2s linear infinite;
+}
+
+/* Animation for Moving Borders */
+@keyframes moveEdges {
+  0% { top: 0; left: 0; }
+  25% { top: 0; left: 100%; transform: translateX(-100%); }
+  50% { top: 100%; left: 100%; transform: translate(-100%, -100%); }
+  75% { top: 100%; left: 0; transform: translateY(-100%); }
+  100% { top: 0; left: 0; }
+}
 /* Search and Filter Styles */
 .blog-archive {
   padding: 100px 20px;
@@ -432,93 +496,7 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
 }
-/* Centering the search bar */
-.search-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
 
-/* Styling the search bar */
-.search-container {
-  position: relative;
-  width: 50%;
-  max-width: 500px;
-}
-
-/* Search input styling */
-.search-input {
-  width: 100%;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 25px; /* Curved edges */
-  outline: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: white;
-}
-
-/* Black glow effect when focused */
-.search-input:focus {
-  border-color: #000; /* Black border */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Black glow effect */
-  transform: scale(1.05);
-}
-
-/* Search icon */
-.search-icon {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M21.71 20.29l-5.4-5.4A7.93 7.93 0 0018 10a8 8 0 10-8 8 7.93 7.93 0 004.89-1.71l5.4 5.4a1 1 0 001.42-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"></path></svg>') no-repeat center;
-  background-size: contain;
-}
-
-/* Move input text right so it doesn’t overlap with the icon */
-.search-input {
-  padding-left: 40px;
-}
-
-/* Rotating Borders */
-.search-border {
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  width: calc(100% + 12px);
-  height: calc(100% + 12px);
-  border-radius: 30px;
-  border: 2px solid black;
-  animation: rotate-border 2s linear infinite;
-  pointer-events: none; /* Prevents user interaction */
-}
-
-/* Second Rotating Border */
-.search-border::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  border: 2px solid black;
-  top: 0;
-  left: 0;
-  animation: rotate-border 2s linear infinite reverse;
-}
-
-/* 🔄 Rotation Animation */
-@keyframes rotate-border {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .filter-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
