@@ -467,23 +467,6 @@ footer {
   background-size: contain;
 }
 
-/* Edge Lights - 2 Moving Borders */
-.edge-light {
-  position: absolute;
-  width: 5px;
-  height: 20px;
-  background: black;
-  animation: moveEdges 2s linear infinite;
-}
-
-/* Animation for Moving Borders */
-@keyframes moveEdges {
-  0% { top: 0; left: 0; }
-  25% { top: 0; left: 100%; transform: translateX(-100%); }
-  50% { top: 100%; left: 100%; transform: translate(-100%, -100%); }
-  75% { top: 100%; left: 0; transform: translateY(-100%); }
-  100% { top: 0; left: 0; }
-}
 /* Search and Filter Styles */
 .blog-archive {
   padding: 100px 20px;
