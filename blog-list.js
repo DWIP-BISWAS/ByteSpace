@@ -131,13 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
     searchContainer.appendChild(borderElement);
   }
 
-  const searchContainer = document.querySelector('.search-container');
-
-  if (searchContainer) {
-    for (let i = 0; i < 2; i++) {
-      const edgeLight = document.createElement('div');
-      edgeLight.classList.add('edge-light');
-      searchContainer.appendChild(edgeLight);
-    }
-  }
-});
+    // Add search input animations
+   const searchInput = document.querySelector('.search-input');
+   searchInput.addEventListener('focus', () => {
+     searchInput.parentElement.classList.add('focused');
+   });
+   searchInput.addEventListener('blur', () => {
+     searchInput.parentElement.classList.remove('focused');
+   });
