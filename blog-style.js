@@ -55,4 +55,29 @@ function filterPosts() {
   const searchTerm = searchInput.value.toLowerCase();
   const selectedTopics = Array.from(document.querySelectorAll('.filter-option input[type="checkbox"]:checked'))
     .map(checkbox => checkbox.value);
-  const selectedTags = Array.from(document.querySelectorAll('.filter-option input[type="checkbox"]:checked'))
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm) || 
+                         post.excerpt.toLowerCase().includes(searchTerm);
+    
+    const matchesTopics = selectedTopics.length === 0 || 
+                         post.topics.some(topic => selectedTopics.includes(topic));
+    
+    const matchesTags = selectedTags.length === 0 || 
+                       post.tags.some(tag => selectedTags.includes(tag));
+
+    return matchesSearch && matchesTopics && matchesTags;
+  });
+
+  renderBlogPosts(filteredPosts);
+}
+
+// Event listeners
+searchInput.addEventListener('input', filterPosts);
+topicCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', filterPosts);
+});
+
+// Initial render
+document.addEventListener('DOMContentLoaded', () => {
+  renderBlogPosts(blogPosts);
+});
