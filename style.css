@@ -296,17 +296,6 @@ footer {
   }
 }
 
-
-Deployments
-Console
-Port :5000 opened on
-Diff: styles.css
-client/public/styles.css
--0
-+132
-    grid-template-columns: 1fr;
-  }
-}
 /* Blog Page Styles */
 .blog-content {
   max-width: 800px;
@@ -495,7 +484,7 @@ client/public/styles.css
   padding-left: 40px;
 }
 
-/* 🔥 Rotating Borders 🔥 */
+/* Rotating Borders */
 .search-border {
   position: absolute;
   top: -6px;
@@ -505,7 +494,7 @@ client/public/styles.css
   border-radius: 30px;
   border: 2px solid black;
   animation: rotate-border 2s linear infinite;
-  pointer-events: none; /* Prevents interference */
+  pointer-events: none; /* Prevents user interaction */
 }
 
 /* Second Rotating Border */
@@ -521,7 +510,7 @@ client/public/styles.css
   animation: rotate-border 2s linear infinite reverse;
 }
 
-/* 🔄 Border Rotation Animation */
+/* 🔄 Rotation Animation */
 @keyframes rotate-border {
   0% {
     transform: rotate(0deg);
@@ -530,7 +519,6 @@ client/public/styles.css
     transform: rotate(360deg);
   }
 }
-
 .filter-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
