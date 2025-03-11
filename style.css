@@ -438,37 +438,59 @@ client/public/styles.css
   margin: 0 auto;
 }
 
-.search-section {
-  margin-bottom: 3rem;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
-}
-
-.search-input {
-  width: 100%;
-/* Search and Filter Styles */
 .blog-archive {
   padding: 100px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
+/* Centering the search bar */
 .search-section {
-  margin-bottom: 3rem;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
+
+/* Styling the search bar */
+.search-container {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+}
+
 .search-input {
   width: 100%;
-  padding: 1rem;
-  font-size: 1.2rem;
-  border: 2px solid var(--primary);
-  border-radius: 4px;
-  margin-bottom: 2rem;
-  transition: var(--transition);
-}
-.search-input:focus {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 25px; /* Curved edges */
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated glow effect when focused */
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Search icon */
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M21.71 20.29l-5.4-5.4A7.93 7.93 0 0018 10a8 8 0 10-8 8 7.93 7.93 0 004.89-1.71l5.4 5.4a1 1 0 001.42-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"></path></svg>') no-repeat center;
+  background-size: contain;
+}
+
+/* Move input text right so it doesn’t overlap with the icon */
+.search-input {
+  padding-left: 40px;
 }
 .filter-container {
   display: grid;
