@@ -1,4 +1,5 @@
-  // Hamburger Menu Animation
+document.addEventListener('DOMContentLoaded', () => {
+// Hamburger Menu Animation
   const hamburger = document.querySelector('.hamburger-menu');
   const navMenu = document.querySelector('.nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
