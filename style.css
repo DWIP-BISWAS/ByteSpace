@@ -520,3 +520,15 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Remove default blue color and underline */
+.blog-post h2 a {
+  color: black; /* Black text */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make it stand out */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Change color on hover */
+.blog-post h2 a:hover {
+  color: #333; /* Darker shade on hover */
+}
