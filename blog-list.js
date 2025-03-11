@@ -7,7 +7,7 @@ const blogPosts = [
     date: "March 11, 2025",
     topics: ["design", "minimalism"],
     tags: ["ui-ux", "trends"],
-    url: "post1.html"  // Add URL for redirection
+    url: "post1.html"
   },
   {
     id: 2,
@@ -29,63 +29,23 @@ const blogPosts = [
   }
 ];
 
-// DOM Element
-const blogGrid = document.getElementById('blog-grid');
-
-// Function to Render Blog Posts
-function renderBlogPosts(posts) {
-  blogGrid.innerHTML = posts.map(post => `
-    <div class="blog-post">
-      <h2><a href="${post.url}">${post.title}</a></h2>
-      <p>${post.excerpt}</p>
-      <span class="post-date">${post.date}</span>
-      <div class="post-tags">
-        ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-      </div>
-    </div>
-  `).join('');
-}
-
-// Initial Render
-document.addEventListener('DOMContentLoaded', () => {
-  renderBlogPosts(blogPosts);
-});
-
 // DOM Elements
-const searchInput = document.getElementById('blog-search');
 const blogGrid = document.getElementById('blog-grid');
+const searchInput = document.getElementById('blog-search');
 const topicCheckboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
 
-// Debounce function for search optimization
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Render blog posts with loading animation
+// ✅ Function to Render Blog Posts
 function renderBlogPosts(posts) {
   if (posts.length === 0) {
-    blogGrid.innerHTML = `
-      <div class="no-results">
-        No posts found matching your search criteria
-      </div>
-    `;
+    blogGrid.innerHTML = `<div class="no-results">No posts found.</div>`;
     return;
   }
 
   blogGrid.innerHTML = posts.map(post => `
     <div class="blog-post" data-topics="${post.topics.join(',')}" data-tags="${post.tags.join(',')}">
-      <div class="post-image"></div>
       <div class="post-content">
-        <h2>${highlightSearchTerm(post.title, searchInput.value)}</h2>
-        <p class="post-excerpt">${highlightSearchTerm(post.excerpt, searchInput.value)}</p>
+        <h2><a href="${post.url}">${highlightSearchTerm(post.title, searchInput.value)}</a></h2>
+        <p>${highlightSearchTerm(post.excerpt, searchInput.value)}</p>
         <span class="post-date">${post.date}</span>
         <div class="post-tags">
           ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
@@ -93,26 +53,28 @@ function renderBlogPosts(posts) {
       </div>
     </div>
   `).join('');
-
-  // Add animation delay to each post
-  document.querySelectorAll('.blog-post').forEach((post, index) => {
-    post.style.animationDelay = `${index * 0.2}s`;
-  });
 }
 
-// Highlight search terms in text
+// ✅ Function to Highlight Search Terms
 function highlightSearchTerm(text, searchTerm) {
   if (!searchTerm) return text;
   const regex = new RegExp(`(${searchTerm})`, 'gi');
   return text.replace(regex, '<mark>$1</mark>');
 }
 
-// Filter posts based on search and filters
+// ✅ Debounce Function for Performance
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+}
+
+// ✅ Function to Filter Posts Based on Search & Filters
 const filterPosts = debounce(() => {
   const searchTerm = searchInput.value.toLowerCase();
   const selectedTopics = Array.from(document.querySelectorAll('.filter-option input[type="checkbox"]:checked'))
-    .map(checkbox => checkbox.value);
-  const selectedTags = Array.from(document.querySelectorAll('.filter-option input[type="checkbox"]:checked'))
     .map(checkbox => checkbox.value);
 
   const filteredPosts = blogPosts.filter(post => {
@@ -126,31 +88,17 @@ const filterPosts = debounce(() => {
     const matchesTopics = selectedTopics.length === 0 || 
                          post.topics.some(topic => selectedTopics.includes(topic));
 
-    const matchesTags = selectedTags.length === 0 || 
-                       post.tags.some(tag => selectedTags.includes(tag));
-
-    return matchesSearch && matchesTopics && matchesTags;
+    return matchesSearch && matchesTopics;
   });
 
   renderBlogPosts(filteredPosts);
 }, 300);
 
-// Event listeners
+// ✅ Event Listeners
 searchInput.addEventListener('input', filterPosts);
-topicCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', filterPosts);
-});
+topicCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterPosts));
 
-// Initial render
+// ✅ Initial Render
 document.addEventListener('DOMContentLoaded', () => {
   renderBlogPosts(blogPosts);
-
-  // Add search input animations
-  const searchInput = document.querySelector('.search-input');
-  searchInput.addEventListener('focus', () => {
-    searchInput.parentElement.classList.add('focused');
-  });
-  searchInput.addEventListener('blur', () => {
-    searchInput.parentElement.classList.remove('focused');
-  });
 });
