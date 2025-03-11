@@ -470,9 +470,10 @@ client/public/styles.css
 }
 
 /* Animated glow effect when focused */
+/* Search bar focus effect with black glow */
 .search-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  border-color: #000; /* Black border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Black glow effect */
   transform: scale(1.05);
 }
 
