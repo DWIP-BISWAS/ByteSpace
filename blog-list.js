@@ -1,32 +1,14 @@
 // Sample blog data with URLs
 const blogPosts = [
-  {
-    id: 1,
-    title: "The Art of Minimalism",
-    excerpt: "Exploring the beauty of less in modern design and lifestyle.",
-    date: "March 11, 2025",
-    topics: ["design", "minimalism"],
-    tags: ["ui-ux", "trends"],
-    url: "post1.html"
-  },
-  {
-    id: 2,
-    title: "Digital Renaissance",
-    excerpt: "How technology is reshaping creative expression in the 21st century.",
-    date: "March 10, 2025",
-    topics: ["technology", "design"],
-    tags: ["web-design", "trends"],
-    url: "post2.html"
-  },
-  {
-    id: 3,
-    title: "Future of Web Design",
-    excerpt: "Predictions and trends shaping the next decade of digital interfaces.",
-    date: "March 9, 2025",
-    topics: ["design", "technology"],
-    tags: ["ui-ux", "web-design"],
-    url: "post3.html"
-  }
+{
+    "id": 1,
+    "title": "Dark Web vs. Deep Web: What’s the Difference?",
+    "excerpt": "Unraveling the myths: What really lies beneath the surface web?",
+    "date": "March 11, 2025",
+    "topics": ["cybersecurity", "internet"],
+    "tags": ["dark-web", "deep-web", "privacy"],
+    "url": "blog1.html"
+}
 ];
 
 // DOM Elements
