@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>ByteSpace - Blog Archive</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <nav class="nav-menu">
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="blog-list.html" class="nav-link">Blog</a>
+    </div>
+  </nav>
+
+  <main class="blog-archive">
+    <div class="search-section">
+      <input type="text" id="blog-search" placeholder="Search blogs..." class="search-input">
+      
+      <div class="filter-container">
+        <div class="filter-group">
+          <h3>Topics</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" value="design"> Design
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="technology"> Technology
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="minimalism"> Minimalism
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Tags</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" value="ui-ux"> UI/UX
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="web-design"> Web Design
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="trends"> Trends
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      <!-- Blog posts will be dynamically populated here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ByteSpace. All rights reserved.</p>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script src="/blog-list.js"></script>
+</body>
+</html>
