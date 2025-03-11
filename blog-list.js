@@ -116,9 +116,20 @@ topicCheckboxes.forEach(checkbox => {
   checkbox.addEventListener('change', filterPosts);
 });
 
-// Initial render
+// Initial render with rotating borders
 document.addEventListener('DOMContentLoaded', () => {
   renderBlogPosts(blogPosts);
+
+  // Add rotating borders dynamically
+  const searchContainer = document.querySelector('.search-container');
+
+  if (searchContainer) {
+    const borderElement = document.createElement('div');
+    borderElement.classList.add('search-border');
+
+    // Append rotating border to the search container
+    searchContainer.appendChild(borderElement);
+  }
 
   // Add search input animations
   const searchInput = document.querySelector('.search-input');
