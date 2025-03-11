@@ -458,6 +458,7 @@ client/public/styles.css
   max-width: 500px;
 }
 
+/* Search input styling */
 .search-input {
   width: 100%;
   padding: 12px 20px;
@@ -467,10 +468,10 @@ client/public/styles.css
   outline: none;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
-/* Animated glow effect when focused */
-/* Search bar focus effect with black glow */
+/* Black glow effect when focused */
 .search-input:focus {
   border-color: #000; /* Black border */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Black glow effect */
@@ -493,6 +494,43 @@ client/public/styles.css
 .search-input {
   padding-left: 40px;
 }
+
+/* 🔥 Rotating Borders 🔥 */
+.search-border {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 30px;
+  border: 2px solid black;
+  animation: rotate-border 2s linear infinite;
+  pointer-events: none; /* Prevents interference */
+}
+
+/* Second Rotating Border */
+.search-border::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  border: 2px solid black;
+  top: 0;
+  left: 0;
+  animation: rotate-border 2s linear infinite reverse;
+}
+
+/* 🔄 Border Rotation Animation */
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .filter-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
