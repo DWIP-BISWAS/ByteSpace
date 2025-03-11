@@ -116,8 +116,16 @@ topicCheckboxes.forEach(checkbox => {
   checkbox.addEventListener('change', filterPosts);
 });
 
-// Initial render with rotating borders
+// Initial render
 document.addEventListener('DOMContentLoaded', () => {
   renderBlogPosts(blogPosts);
 
-  
+  // Add search input animations
+  const searchInput = document.querySelector('.search-input');
+  searchInput.addEventListener('focus', () => {
+    searchInput.parentElement.classList.add('focused');
+  });
+  searchInput.addEventListener('blur', () => {
+    searchInput.parentElement.classList.remove('focused');
+  });
+});
