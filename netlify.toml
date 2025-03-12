@@ -1,25 +1,21 @@
-# Netlify Configuration File (netlify.toml)
+# Netlify Configuration File
 
 [build]
-  command = ""  # No build command if you're using static HTML/CSS/JS
-  publish = "/"  # Root directory since all files are in the root
+  publish = "."  # Root directory
 
 [[plugins]]
-  package = "netlify-plugin-inline-critical-css"  # Inlines critical CSS for better performance
+  package = "netlify-plugin-inline-critical-css"  # Inlines critical CSS
 
 [[plugins]]
-  package = "netlify-plugin-submit-sitemap"  # Automatically submits sitemap to search engines
+  package = "netlify-plugin-submit-sitemap"  # Submits sitemap automatically
 
 [[plugins]]
-  package = "netlify-plugin-is-website-vulnerable"  # Scans JS dependencies for security risks
+  package = "netlify-plugin-is-website-vulnerable"  # Checks JS security
 
 [[plugins]]
-package = "netlify-plugin-sitemap"
+  package = "@netlify/plugin-sitemap"  # Generates sitemap
 
-  [plugins.inputs]
-  buildDir = "/"  # Root directory since everything is in the root
-  
-# Redirect all HTTP to HTTPS for SEO & security
+# Redirect HTTP to HTTPS
 [[redirects]]
   from = "http://*"
   to = "https://:splat"
