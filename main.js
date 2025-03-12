@@ -84,7 +84,7 @@ function renderBlogPosts() {
     "date": "March 12, 2025",
     "topics": ["car automation", "automobile safety", "technology"],
     "tags": ["self-driving", "AI-cars", "car-safety", "new-car-buyers", "ADAS"],
-    "url": "car-automation-safety.html"
+    "url": "blog4.html"
     },
     {
       "id": 1,
