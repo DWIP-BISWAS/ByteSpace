@@ -9,6 +9,15 @@ const blogPosts = [
     "tags": ["free-tools", "open-source", "budget-friendly", "software"],
     "url": "blog3.html"
   },
+ {
+    "id": 4,
+    "title": "The Future of Car Automation: Safety, Features, and Buying Guide for 2025",
+    "excerpt": "Car automation is revolutionizing the way we drive. From self-driving technology to advanced safety features, discover what’s new in 2025 and how to choose the best vehicle.",
+    "date": "March 12, 2025",
+    "topics": ["car automation", "automobile safety", "technology"],
+    "tags": ["self-driving", "AI-cars", "car-safety", "new-car-buyers", "ADAS"],
+    "url": "car-automation-safety.html"
+ },
 {
     "id": 1,
     "title": "Dark Web vs. Deep Web: What’s the Difference?",
