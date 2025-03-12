@@ -77,6 +77,15 @@ function renderBlogPosts() {
       "tags": ["dark-web", "deep-web", "privacy"],
       "url": "blog1.html"
     }
+    {
+    "id": 2,
+    "title": "AI Tools: Revolutionizing Productivity, Creativity & Workflows",
+    "excerpt": "Discover how AI tools are transforming industries, automating tasks, and enhancing creativity.",
+    "date": "March 12, 2025",
+    "topics": ["artificial intelligence", "technology"],
+    "tags": ["AI-tools", "automation", "productivity"],
+    "url": "ai-tools.html"
+    }
   ];
 
   const blogGrid = document.getElementById("blog-grid");
