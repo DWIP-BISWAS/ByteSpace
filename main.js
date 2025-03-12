@@ -76,7 +76,7 @@ function renderBlogPosts() {
       "topics": ["cybersecurity", "internet"],
       "tags": ["dark-web", "deep-web", "privacy"],
       "url": "blog1.html"
-    }
+    },
     {
     "id": 2,
     "title": "AI Tools: Revolutionizing Productivity, Creativity & Workflows",
