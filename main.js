@@ -102,7 +102,7 @@ function renderBlogPosts() {
     "date": "March 12, 2025",
     "topics": ["artificial intelligence", "technology"],
     "tags": ["AI-tools", "automation", "productivity"],
-    "url": "ai-tools.html"
+    "url": "blog2.html"
     }
   ];
 
