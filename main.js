@@ -68,6 +68,15 @@ window.addEventListener('scroll', () => {
 // ✅ Function to Render Blog Posts
 function renderBlogPosts() {
   const blogPosts = [
+     {
+    "id": 3,
+    "title": "50 Free Alternatives to Popular Expensive Software",
+    "excerpt": "Explore a list of 50 free and open-source tools that can replace costly software without compromising quality.",
+    "date": "March 12, 2025",
+    "topics": ["free software", "technology", "productivity"],
+    "tags": ["free-tools", "open-source", "budget-friendly", "software"],
+    "url": "blog3.html"
+  },
     {
       "id": 1,
       "title": "Dark Web vs. Deep Web: What’s the Difference?",
