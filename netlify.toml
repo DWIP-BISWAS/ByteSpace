@@ -13,6 +13,12 @@
 [[plugins]]
   package = "netlify-plugin-is-website-vulnerable"  # Scans JS dependencies for security risks
 
+[[plugins]]
+package = "netlify-plugin-sitemap"
+
+  [plugins.inputs]
+  buildDir = "/"  # Root directory since everything is in the root
+  
 # Redirect all HTTP to HTTPS for SEO & security
 [[redirects]]
   from = "http://*"
