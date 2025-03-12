@@ -10,9 +10,6 @@
   package = "netlify-plugin-submit-sitemap"  # Submits sitemap automatically
 
 [[plugins]]
-  package = "netlify-plugin-is-website-vulnerable"  # Checks JS security
-
-[[plugins]]
   package = "@netlify/plugin-sitemap"  # Generates sitemap
 
 # Redirect HTTP to HTTPS
